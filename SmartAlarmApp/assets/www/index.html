@@ -36,7 +36,15 @@
       <li><a href="#">alarm2</a></li>
      
     </ul>
-    
+    <div data-role="content">
+    <form method="post" action="demoform.asp">
+      <div data-role="fieldcontain">
+        <label for="points">Points:</label>
+        <input type="range" name="points" id="points" value="50" min="0" max="100">
+      </div>
+      <input type="submit" data-inline="true" value="change">
+    </form>
+  </div>
   </div>
 </div> 
 

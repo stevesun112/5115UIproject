@@ -17,6 +17,7 @@
  * under the License.
  */
 var app = {
+    var notification = cordova.require("cordova/plugin/localNotification");
     // Application Constructor
     initialize: function() {
         this.bindEvents();

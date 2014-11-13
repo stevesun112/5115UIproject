@@ -65,6 +65,9 @@ function init() {
   /* create the board and set the initial player */
   createBoard();
   setInitialPlayer();
+  
+  /* always call newGame when user start the puzzle */
+  newGame();
 }
 
 

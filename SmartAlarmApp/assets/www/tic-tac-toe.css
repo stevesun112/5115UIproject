@@ -53,14 +53,14 @@ body {
 table {
   margin-left:auto; 
   margin-right:auto; 
-  width: 551px; 
+  width: 80%; 
   -webkit-user-select: none; 
 }
 td {
-  height: 175px;
-  width: 175px;
+  height: 100px;
+  width: 130px;
   text-align: center;
-  font-size: 120px;
+  font-size: 70px;
   border: 2px solid #cccccc;
   -webkit-border-radius: 10px;
 }
@@ -68,7 +68,7 @@ td {
   margin-left:auto; 
   margin-right:auto;
   padding: 20px 10px 10px 10px;
-  width: 511px; 
+  width: 331px; 
   text-align: left;
 }
 #players > div {

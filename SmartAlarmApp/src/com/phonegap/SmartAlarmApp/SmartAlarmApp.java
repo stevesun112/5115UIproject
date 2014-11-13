@@ -30,7 +30,11 @@ public class SmartAlarmApp extends DroidGap
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
         //super.loadUrl(Config.getStartUrl());
+<<<<<<< HEAD
         super.loadUrl("file:///android_asset/www/index2.html");
+=======
+        super.loadUrl("file:///android_asset/www/index.html");
+>>>>>>> FETCH_HEAD
     }
 }
 

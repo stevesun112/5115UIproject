@@ -10,8 +10,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
 import android.graphics.Color;
 import android.net.Uri;
+
 import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
@@ -76,8 +78,10 @@ public class AlarmReceiver extends BroadcastReceiver {
 		// Define the Intent
 		final Intent notificationIntent = new Intent(context, SmartAlarmApp.class);
 		final PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
 		//Uri sound = Uri.parse("android.resource://" + "com.phonegap.SmartAlarmApp" + "/" + "/ringer");
 		//long[] vibrate = { 0, 100, 200, 300 };
+
 		// Notification Builder
 		// You will need Support Library to use NotificationCompat.Builder
 		NotificationCompat.Builder mBuilder =
@@ -86,9 +90,11 @@ public class AlarmReceiver extends BroadcastReceiver {
 				    .setContentText(notificationSubText)
 				    .setTicker(tickerText)
 				    .setDefaults(Notification.DEFAULT_ALL)
+
 				   // .setSound(sound)
 				   // .setVibrate(vibrate)
 				   // .setLights(Color.BLUE, 500, 500)
+
 				    .setContentIntent(contentIntent)
 				    .setAutoCancel(true);
 

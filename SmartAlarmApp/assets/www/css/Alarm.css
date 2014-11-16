@@ -1,0 +1,31 @@
+#rotationSliderContainer { 
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: #FF7400;
+    border-radius: 125px;
+    margin: 50px auto;
+    cursor: default;
+}
+#rotationSlider { 
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: #A64B00;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 3;
+}
+#rotationSliderDegrees {
+    position: absolute;
+    top: 110px;
+    width: 100%;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    -moz-user-select: none; 
+    -khtml-user-select: none; 
+    -webkit-user-select: none; 
+    -o-user-select: none;
+    z-index: 2;
+}

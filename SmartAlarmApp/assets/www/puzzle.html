@@ -1,67 +1,37 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<!DOCTYPE html>
-<html>
 <head>
-
+	<script src="http://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/game.css" type="text/css">
+	<script src="js/game.js" type="text/javascript"></script>
 </head>
 
 <body>
+     <h1> TIC TAC TOE </h1>
 
-<div data-role="page" id="puzzle">
-  	<head>
-  		<title>Tic Tac Toe</title>
-  		<meta name="viewport" content="width=600px" />
-  		<link rel="stylesheet" href="tic-tac-toe.css" type="text/css">
-  		<script src="tic-tac-toe.js" type="text/javascript"></script>
-  		<a href="javascript:window.location.href=window.location.href">
-	</head>
-	
-	<body onload="init();">  
-		<div id="players">
-  			<div id="X" class="">Player X</div>
-  			<div id="O" class="">Player O</div>
-  			<input type="button" class="button" value="New Game">
-		</div>
-		
-		<table>
-  			<tr>
-    			<td id="0"></td>
-    			<td id="1"></td>
-    			<td id="2"></td>
-  			</tr>
-  		
-  			<tr>
-    			<td id="3"></td>
-    			<td id="4"></td>
-    			<td id="5"></td>
-  			</tr>
-  		
-  			<tr>
-    			<td id="6"></td>
-    			<td id="7"></td>
-    			<td id="8"></td>
-  			</tr>
-		</table>
-	</body>
-	</div>
+    <br>
+    <div id="board-outer" class="center">
+        <table id="board">
+            <tr class="row">
+                <td id="a1"></td>
+                <td id="a2"></td>
+                <td id="a3"></td>
+            </tr>
+            <tr class="row">
+                <td id="b1"></td>
+                <td id="b2"></td>
+                <td id="b3"></td>
+            </tr>
+            <tr class="row">
+                <td id="c1"></td>
+                <td id="c2"></td>
+                <td id="c3"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="center button">
+        <button id="restart">New game</button>
+    </div>
 </body>
-</html>
-			

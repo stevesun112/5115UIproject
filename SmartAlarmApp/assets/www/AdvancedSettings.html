@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <title>Settings</title>
+    <link rel="stylesheet" href="css/AdvancedSettings.css" type="text/css">
+</head>
+<body onload="init();">  
+	<form action="demo_form.asp">
+		<n1> Repeat </n1><br><br>
+  		Sun  Mon  Tue  Wed  Thur Fri  &nbspSat<br>
+  		<input type="checkbox" name="sunday" value="Sun"> &nbsp&nbsp
+  		<input type="checkbox" name="monday" value="Mon"> &nbsp&nbsp
+		<input type="checkbox" name="tuesday" value="Tue"> &nbsp&nbsp
+		<input type="checkbox" name="wednesday" value="Wed"> &nbsp&nbsp
+		<input type="checkbox" name="thursday" value="Thur"> &nbsp&nbsp
+		<input type="checkbox" name="friday" value="Fri"> &nbsp&nbsp
+		<input type="checkbox" name="saturday" value="Sat"><br>
+
+<div class="onoffswitch">	<n1> Weather </n1>
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch1" checked>
+    <label class="onoffswitch-label" for="myonoffswitch1">
+        <span class="onoffswitch-inner">
+            <span class="onoffswitch-active"><span class="onoffswitch-switch">ON</span></span>
+            <span class="onoffswitch-inactive"><span class="onoffswitch-switch">OFF</span></span>
+        </span>
+    </label>
+</div>
+
+<div class="onoffswitch">	<n1> Vibrate </n1>
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch2" checked>
+    <label class="onoffswitch-label" for="myonoffswitch2">
+        <span class="onoffswitch-inner">
+            <span class="onoffswitch-active"><span class="onoffswitch-switch">ON</span></span>
+            <span class="onoffswitch-inactive"><span class="onoffswitch-switch">OFF</span></span>
+        </span>
+    </label>
+</div>
+
+<div class="onoffswitch">	<n1> Unlock Puzzle </n1>
+    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch3" checked>
+    <label class="onoffswitch-label" for="myonoffswitch3">
+        <span class="onoffswitch-inner">
+            <span class="onoffswitch-active"><span class="onoffswitch-switch">ON</span></span>
+            <span class="onoffswitch-inactive"><span class="onoffswitch-switch">OFF</span></span>
+        </span>
+    </label>
+</div>
+
+<n1> Song </n1>
+<select>
+	<option value ="Radio">Radio</option>
+  	<option value ="Song A">Song A</option>
+  	<option value="Song B">Song B</option>
+  	<option value="Song C">Song C</option>
+</select>
+
+<div>
+	<label>Volume<span id='rangeValue1' class='attentionGrapper'></span></label>
+	<input type="range" id="rangeControl1" value="10" min="0" max="40">
+</div>
+
+<br><input type="image" src="img/button.png" name="image" width="60" height="60"><br>
+
+</form>
+</body>
+</html>

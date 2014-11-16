@@ -10,7 +10,10 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -67,21 +70,25 @@ public class AlarmReceiver extends BroadcastReceiver {
 					"AlarmReceiver, ignoring alarm since it is due");
 			return;
 		}
-
+		String package_name = "com.bicrement.plugins.localNotification";
 		// Construct the notification and notificationManager objects
 		final NotificationManager notificationMgr = 
 				(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		// Define the Intent
 		final Intent notificationIntent = new Intent(context, SmartAlarmApp.class);
 		final PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+		
 		// Notification Builder
 		// You will need Support Library to use NotificationCompat.Builder
+		long[] vibrate = { 0, 100, 200, 300 };
 		NotificationCompat.Builder mBuilder =
 			    new NotificationCompat.Builder(context)
 				    .setContentTitle(notificationTitle)
 				    .setContentText(notificationSubText)
 				    .setTicker(tickerText)
-				    .setDefaults(Notification.DEFAULT_ALL)
+				    //.setDefaults(Notification.DEFAULT_ALL)
+				    .setVibrate(vibrate)
+				    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE))
 				    .setContentIntent(contentIntent)
 				    .setAutoCancel(true);
 

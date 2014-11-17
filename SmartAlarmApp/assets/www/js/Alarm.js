@@ -35,6 +35,7 @@ $(function(){
             var atan = Math.atan2(mPos.x-radius, mPos.y-radius);
             deg = -atan/(Math.PI/180) + 180; // final (0-360 positive) degrees from mouse position 
             
+            
             // for attraction to multiple of 90 degrees
             var distance = Math.abs( deg - ( Math.round(deg / 90) * 90 ) );
             

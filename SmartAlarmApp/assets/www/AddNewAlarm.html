@@ -1,0 +1,120 @@
+
+			
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8"/>
+ <meta name="format-detection" content="telephone=no" />
+ <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+</head>
+
+<body>
+
+  <div data-role="header">
+    <h1>Add New Alarm</h1>
+  </div>
+
+   <div id="RegularSettings">
+	 
+	     <div>
+ 		 <label for="name">Event Name:</label>
+ 		 <input type="text" name="name" id="name" value="">
+ 		 </div>
+ 		   
+ 		 <div>
+ 		 <label for="time">Alarm starts at:</label>
+ 		 <input type="time" id="time" value="60"> 
+         </div>
+
+      <div>
+      <label for="points">Soonze time:</label>
+      <input type="range" name="points" id="points" value="10" min="0" max="30" data-popup-enabled="true" data-highlight="true">
+      </div>
+     
+        <div>
+        <p id="result">
+          Alarm ends at(min):
+        </p>
+        </div>
+       
+       <div>
+       <a class="ui-btn ui-icon-check ui-btn-icon-left" id="notify-later">Done</a>
+       </div>
+       
+ </div>
+ 
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/LocalNotification.js"></script>
+        <script type="text/javascript" src="js/moment.min.js"></script>
+
+
+        <script type="text/javascript">
+          var notification = cordova.require("cordova/plugin/localNotification");
+
+          document.addEventListener('deviceready', onDeviceReady, false);
+
+          function onDeviceReady() {
+            var id = 0;
+
+
+            // nofity later
+            var btn_later = document.getElementById("notify-later");
+
+            btn_later.addEventListener("click", function() {
+              id++;
+	
+			var now     = new Date(); 
+			var hour    = now.getHours();
+			var minute  = now.getMinutes();
+
+			var time =  document.getElementById("time").value;
+			var times = time.split(":");
+
+			var newhour  = parseInt(times[0]);
+			var newminutes  = parseInt(times[1]);
+
+			if(newminutes < minute) {
+			newhour = newhour - 1;
+			newminutes = newminutes+60;
+			}
+
+			var addmintues = newminutes - minute;
+
+			if(newhour < hour){
+ 			newhour = newhour+24;
+			}
+
+			var addhour = newhour-hour;
+		
+			var snooze = document.getElementById("points").value;
+			var addsnooze = parseInt(snooze);
+			
+			var result = addhour*60*60+addmintues*60+addsnooze*60;
+            
+            var date = moment().add(result, "seconds")._d;
+		
+              notification.add({
+                id: id,
+                date: date,
+                message: "Local Notification " + id,
+                subtitle: "Subtitle is here",
+                ticker: "This is a sample ticker text",
+                repeatDaily: false
+              });
+
+              putResult("Add Notification = " + id + ", " + result + "s from now");
+            }); 
+          }
+
+          function putResult(str) {
+            document.getElementById("result").innerText = str;
+          }
+        </script>
+</body>
+ 
+</html>
+			

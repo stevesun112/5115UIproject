@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.2.min.js"></script>
+
+    </head>
+    <body>
+       <div style="overflow: auto; width: 200px; height: 200px"> 
+    <div data-role="page" data-theme='b'>
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="index.html" data-ajax="false"><i class='fa fa-bars'></i></a>
+            <h1>Advanced Settings</h1>
+        </div>
+        
+        <div data-role="content">   
+
+			    
+            <form>
+                <ul data-role="listview" data-inset="true">
+                    <li data-role="fieldcontain">
+                        <fieldset data-role="controlgroup"  data-type="horizontal"  data-mini="true">
+                            <legend>Repeat</legend>
+                            <input type="checkbox" name="checkbox-1a" id="checkbox-1ab" checked="">
+                            <label for="checkbox-1ab">Sun.</label>
+                            <input type="checkbox" name="checkbox-2a" id="checkbox-2ab">
+                            <label for="checkbox-2ab">Mon.</label>
+                            <input type="checkbox" name="checkbox-3a" id="checkbox-3ab">
+                            <label for="checkbox-3ab">Tue.</label>
+                            <input type="checkbox" name="checkbox-4a" id="checkbox-4ab">
+                            <label for="checkbox-4ab">Wed.</label>
+                            <input type="checkbox" name="checkbox-5a" id="checkbox-5ab">
+                            <label for="checkbox-5ab">Thur.</label>
+                            <input type="checkbox" name="checkbox-6a" id="checkbox-6ab">
+                            <label for="checkbox-6ab">Fri.</label>
+                            <input type="checkbox" name="checkbox-7a" id="checkbox-7ab">
+                            <label for="checkbox-7ab">Sat.</label>
+                        </fieldset>
+                    </li>
+
+                    <li data-role="fieldcontain">
+                        <label for="flip2b">Weather</label>
+                        <select name="flip2" id="flip2b" data-role="flipswitch">
+                            <option value="off">Off</option>
+                            <option value="on">On</option>
+                        </select>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <label for="flip2b">Vibrate</label>
+                        <select name="flip2" id="flip2b" data-role="flipswitch">
+                            <option value="off">Off</option>
+                            <option value="on">On</option>
+                        </select>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <label for="flip2b">Unlock Puzzle</label>
+                        <select name="flip2" id="flip2b" data-role="flipswitch">
+                            <option value="off">Off</option>
+                            <option value="on">On</option>
+                        </select>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <label for="select-choice-1b" class="select">Song</label>
+                        <select name="select-choice-1" id="select-choice-1b" data-native-menu="true">
+                            <option value="Song1">Song1</option>
+                            <option value="Song2">Song2</option>
+                            <option value="Song3">Song3</option>
+                            <option value="Song4">Song4</option>
+                            <option value="Song5">Song5</option>
+                        </select>
+                    </li>
+                    
+                    <li data-role="fieldcontain">
+                        <label for="slider2b">Volume</label>
+                        <input type="range" name="slider2" id="slider2b" value="0" min="0" max="100" data-highlight="true">
+                    </li>
+                    
+                    <li>
+						<button type="submit" data-inline='true' data-ajax="false"><i class='lIcon fa fa-check'></i>Done</button>
+						
+						<button type="reset" data-inline='true'><i class='lIcon fa fa-times'></i>Reset</button>
+                    </li>
+                </ul>
+            </form>	        
+        </div>
+    </div>
+    </div>
+    </body>
+</html>

@@ -20,23 +20,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
 
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css" />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.dark.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.2.min.js"></script>
 </head>
 
 <body>
 
-<div data-role="page" id="newalarm">
-	<div data-role="header">
-		<h1>New Alarm</h1>
-	</div>
-	<div data-role="content">
-	    <p>Let's set new alarm here!</p>
-	    <a href="index.html">Back</a>
-  	</div>
-  	<div data-role="content">
-	    <p>Solve the puzzle to turn off this alarm!</p>
-	    <a href="puzzle.html">Puzzle</a>
-  	</div>
+<div data-role="page" data-theme='b'>
+
+
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <a href="i.html" data-ajax="false"><i class='fa fa-bars'></i></a>
+            <h1>New Alarm</h1>
+        </div>
+        
+        <div data-role="content">   
+          	<ul data-role="listview" data-inset="false" data-icon="false" data-divider-theme="b">
+            	<li><a href="Advanced.html">
+                	<img src="img/Weather/snow.png">
+                	<h2>6:24 AM</h2><p>UI Class</p>
+            	</a></li>
+          	</ul>
+  		</div>
+		    
+		<div data-role="content">
+	    	<a href="index.html" data-role="button">Back</a>
+  		</div>
+  		
+  		<div data-role="content">
+	    	<a href="Advanced.html" data-role="button">Advanced</a>
+  		</div>
+  		
 </div>
 
 </body>

@@ -24,7 +24,7 @@ $(document).on("pagecreate","#pageone",function(){
 
           function onDeviceReady() {
             var id = 0;
-            var name = document.getElementById("name");
+            var name = document.getElementById("name").value || "alarm"+id;
             // nofity later
             var btn_later = document.getElementById("notify-later");
 
@@ -38,14 +38,14 @@ $(document).on("pagecreate","#pageone",function(){
               notification.add({
                 id: id,
                 date: date,
-                message: name
+                message: name,
                 subtitle: "Subtitle is here",
                 ticker: "This is a sample ticker text",
                 repeatDaily: false
               });
 
               //putResult(date);
-              window.location.href = 'index.html';
+              window.location.href = "index.html";
 
             });
           }

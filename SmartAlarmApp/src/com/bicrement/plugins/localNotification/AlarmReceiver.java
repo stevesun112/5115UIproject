@@ -2,6 +2,7 @@ package com.bicrement.plugins.localNotification;
 
 import java.util.Calendar;
 
+import com.phonegap.SmartAlarmApp.NewActicity;
 import com.phonegap.SmartAlarmApp.SmartAlarmApp;
 
 import android.app.Notification;
@@ -16,6 +17,8 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.view.Gravity;
+import android.widget.Toast;
 
 /**
  * The alarm receiver is triggered when a scheduled alarm is fired. This class
@@ -41,8 +44,13 @@ public class AlarmReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Log.d("AlarmReceiver", "AlarmReceiver invoked!");
-
-		final Bundle bundle = intent.getExtras();
+	       
+		 // Create toast and show on center of the screen
+	    Toast toast = Toast.makeText(context, "hello@!!!", Toast.LENGTH_LONG);
+	    //toast.setGravity(Gravity.CENTER, 0, 0);
+	    toast.show();
+		
+	    final Bundle bundle = intent.getExtras();
 
 		// Retrieve notification details from the intent
 		final String tickerText = bundle.getString(TICKER_TEXT);
@@ -75,7 +83,7 @@ public class AlarmReceiver extends BroadcastReceiver {
 		final NotificationManager notificationMgr = 
 				(NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 		// Define the Intent
-		final Intent notificationIntent = new Intent(context, SmartAlarmApp.class);
+		final Intent notificationIntent = new Intent(context, NewActicity.class);
 		final PendingIntent contentIntent = PendingIntent.getActivity(context, 0, notificationIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 		
 		// Notification Builder
@@ -85,7 +93,6 @@ public class AlarmReceiver extends BroadcastReceiver {
 			    new NotificationCompat.Builder(context)
 				    .setContentTitle(notificationTitle)
 				    .setContentText(notificationSubText)
-				    .setTicker(tickerText)
 				    //.setDefaults(Notification.DEFAULT_ALL)
 				    .setVibrate(vibrate)
 				    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE))
@@ -101,5 +108,13 @@ public class AlarmReceiver extends BroadcastReceiver {
 		final int id = Integer.parseInt(notificationId.substring(
 				com.bicrement.plugins.localNotification.LocalNotification.PLUGIN_PREFIX.length()));
 		notificationMgr.notify(id, mBuilder.build());
+		//navigator.app.loadUrl("http://www.mydomain.com/page1.html");
+		
+		Log.d("LocalNotification AlarmReceiver",
+				"contexthihsssihi");
+		notificationIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		context.startActivity(notificationIntent);
+		Log.d("LocalNotification AlarmReceiver",
+				"contexthihihi");
 	}
 }

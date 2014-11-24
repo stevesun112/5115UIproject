@@ -16,9 +16,7 @@ $(document).on("pagecreate","#pageone",function(){
         putResult(date);
     });
 });
-});
-
-          
+});          
 
           document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -45,7 +43,7 @@ $(document).on("pagecreate","#pageone",function(){
               });
 
               //putResult(date);
-              window.location.href = "index.html";
+              //window.location.href = "index.html";
 
             });
           }
@@ -110,3 +108,5 @@ $(document).on("pagecreate","#pageone",function(){
 
             document.getElementById("result").innerText = "Alarm ends at:(min):      " + alarm1;
           }
+
+

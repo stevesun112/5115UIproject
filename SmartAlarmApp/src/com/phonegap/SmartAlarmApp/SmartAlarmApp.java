@@ -20,6 +20,8 @@
 package com.phonegap.SmartAlarmApp;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import org.apache.cordova.*;
 
 public class SmartAlarmApp extends DroidGap
@@ -32,5 +34,6 @@ public class SmartAlarmApp extends DroidGap
         //super.loadUrl(Config.getStartUrl());
         super.loadUrl("file:///android_asset/www/index.html");
     }
+    
 }
 
